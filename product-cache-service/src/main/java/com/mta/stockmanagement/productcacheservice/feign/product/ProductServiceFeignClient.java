@@ -7,10 +7,9 @@ import org.springframework.cloud.openfeign.FeignClient;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
-@FeignClient(name = "${feign.product-service.name}")
+@FeignClient("${feign.product-service.name}")
 public interface ProductServiceFeignClient {
 
-    //@GetMapping(value = "/api/v1.0/product/{language}/products")
     @GetMapping(value = "/api/v1.0/product/{language}/products/{id}")
     InternalApiResponse<ProductResponse> getbyid(@PathVariable("language") Language language,
                                                  @PathVariable("id") Long id);

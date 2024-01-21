@@ -17,7 +17,7 @@ import java.io.Serializable;
 public class Product implements Serializable {
 
     @Id
-    private Long productId;
+    private Long Id;
     private String name;
     private Integer quantity;
     private Double price;
